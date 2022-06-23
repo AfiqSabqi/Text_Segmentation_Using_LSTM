@@ -5,10 +5,15 @@
 
 - 🔭 I’m currently working on model development **Text Segmentation Using LSTM**
 
--                                    My model Development has 82% accuracy only using LSTM
-![alt text](https://github.com/[AfiqSabqi]/[Text_Segmentation_Using_LSTM]/accuracy_score.PNG)
--                                       i also projected my plot through tensorboard
+                                    My model Development has 82% accuracy only using LSTM                                   
+https://github.com/AfiqSabqi/Text_Segmentation_Using_LSTM/blob/main/accuracy_score.PNG
+                  
+                                                       Model plot
+https://github.com/AfiqSabqi/Text_Segmentation_Using_LSTM/blob/main/model.png
 
+
+                                       i also projected my plot through tensorboard
+https://github.com/AfiqSabqi/Text_Segmentation_Using_LSTM/blob/main/pictures(graph)/Tensorboard.PNG
 - 🌱 I’m currently learning **Neural Network/Deep Learning/Machine Learning**
 
 - 👨‍💻 All of my projects are available at [GitHub](GitHub)
