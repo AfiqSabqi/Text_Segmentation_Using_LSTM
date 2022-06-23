@@ -7,6 +7,8 @@ This script is a modules for text_segmentation project
 @author: Afiq Sabqi
 """
 
+import matplotlib.pyplot as plt
+
 from tensorflow.keras import Input
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM,Dense,Dropout
@@ -31,3 +33,23 @@ class ModelCreation():
         model.add(Dense(5,'softmax'))
         model.summary()
         return model
+    
+    
+    
+class ModelEvaluation():
+    def __init__(self):
+        pass
+    
+    def plot_loss(self,training_loss,validation_loss):
+        plt.figure()
+        plt.plot(training_loss)
+        plt.plot(validation_loss)
+        plt.legend(['train_loss','val_loss'])
+        plt.show
+        
+    def plot_acc(self,training_acc,validation_acc):
+        plt.figure()
+        plt.plot(training_acc)
+        plt.plot(validation_acc)
+        plt.legend(['train_acc','val_acc'])
+        plt.show

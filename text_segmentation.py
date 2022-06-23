@@ -18,7 +18,7 @@ import pickle
 import datetime
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 
 from sklearn.metrics import accuracy_score
@@ -31,6 +31,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.metrics import classification_report,confusion_matrix
 
 from modules_for_text_segmentation import ModelCreation
+from modules_for_text_segmentation import ModelEvaluation
 
 #%%                                 STATIC
 CSV_URL='https://raw.githubusercontent.com/susanli2016/PyCon-Canada-2019-NLP-Tutorial/master/bbc-text.csv'
@@ -151,7 +152,7 @@ tensorboard_callback=TensorBoard(log_dir=LOG_PATH)
 
 hist=model.fit(X_train,y_train,
                validation_data=(X_test,y_test),
-               batch_size=128,epochs=100,
+               batch_size=128,epochs=25,
                callbacks=[tensorboard_callback])
 
 
@@ -162,17 +163,11 @@ training_acc=hist.history['acc']
 validation_acc=hist.history['val_acc']
 validation_loss=hist.history['val_loss']
 
-plt.figure()
-plt.plot(training_loss)
-plt.plot(validation_loss)
-plt.legend(['train_loss','val_loss'])
-plt.show
 
-plt.figure()
-plt.plot(training_acc)
-plt.plot(validation_acc)
-plt.legend(['train_acc','val_acc'])
-plt.show
+me=ModelEvaluation()
+me.plot_loss(training_loss,validation_loss)
+me.plot_acc(training_acc, validation_acc)
+
 
 results=model.evaluate(X_test,y_test)
 print(results)
